@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Text, View, Image, StyleSheet, ScrollView, ImageBackground } from "react-native";
-import {FlatList, TouchableOpacity} from 'react-native-gesture-handler';
+import {BorderlessButton, FlatList, TouchableOpacity} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Annanas from "../../assets/images/lets-go.png";
 import CardImage from "../../assets/images/canyon.png";
@@ -39,8 +39,13 @@ const Applications = ({ route, navigation }: ApplicationsProps) => {
                             imageStyle={styles.discoverItemImage}>
                             <Text style={styles.discoverItemTitle}>Applicantion</Text>
                             <View style={styles.discoverItemLocationWrapper}>
-                              {/*Image Pin Location Here */}
-                              <Text style={styles.discoverItemLocationText}>{item.submitted_at}</Text>
+                                <Text style={styles.discoverItemLocationText}>{item.submitted_at}</Text>
+                            </View>
+                                <View style={styles.wrapper}>
+                                  <BorderlessButton>
+                                    <Text style={styles.statusTitle}>Viewed</Text>
+                                  </BorderlessButton>
+                                    
                             </View>
                           </ImageBackground>
                         </TouchableOpacity>
@@ -123,5 +128,16 @@ const styles = StyleSheet.create({
   },
   activitiesItemsWrapper: {
     paddingVertical: 20,
+  },
+  wrapper: {
+    marginTop: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  statusTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: theme.palette.white,
   },
 });
