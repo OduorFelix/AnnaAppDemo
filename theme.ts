@@ -10,5 +10,7 @@ export default {
   palette: {
     pineapple: '#FFB432',
     cucumber: '#0b7375',
+    black: '#0C0D0E',
+    white: '#FBFCFE',
   },
 };
